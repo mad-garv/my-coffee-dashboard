@@ -627,6 +627,19 @@ body {
     pointer-events: auto;
 }
 
+.log-page #wall-grid {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: 220px;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.3;
+}
+
 
 /* Each individual image */
 
@@ -663,7 +676,7 @@ body {
 }
 
 
-/* Keep your header/content above the wall */
+/* header/content above the wall */
 
 #header-container,
 #add-wall-images,
@@ -671,6 +684,14 @@ body {
 #wall-content {
     position: relative;
     z-index: 10;
+}
+
+header,
+#hero,
+#coffee-container,
+#coffee-modal {
+    position: relative;
+    z-index: 1;
 }
 
 .wall-page #header-container {
@@ -739,7 +760,8 @@ body {
 
 /* Medium screens */
 @media (min-width: 768px) and (max-width: 1199px) {
-    #wall-grid {
+    #wall-grid,
+    .log-page #wall-grid {
         grid-template-columns: repeat(4, 1fr);        
     }
 }
@@ -747,7 +769,8 @@ body {
 
 /* Phones */
 @media (max-width: 767px) {
-    #wall-grid {
-        grid-template-columns: repeat(2, 1fr);        
+    #wall-grid,
+    .log-page #wall-grid {
+        grid-template-columns: repeat(3, 1fr);        
     }
 }
